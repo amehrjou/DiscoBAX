@@ -1,0 +1,17 @@
+name: discobax
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - seaborn
+  - scikit-learn
+  - pip
+  - gpytorch
+  - pip:
+    - slingpy
+    - genedisco
