@@ -72,5 +72,5 @@ For exact reproduciblility of GeneDisco results, please download the datasets an
 
 ## References
 ```
-Mehrjou, A., Soleymani, A., Jesson, A., Notin, P., Gal, Y., Bauer, S., & Schwab, P. (2022). GeneDisco: A Benchmark for Experimental Design in Drug Discovery. ICLR 2022.
+Lyle, Clare, Arash Mehrjou, Pascal Notin, Andrew Jesson, Stefan Bauer, Yarin Gal, and Patrick Schwab. "DiscoBAX Discovery of optimal intervention sets in genomic experiment design." In International Conference on Machine Learning, pp. 23170-23189. PMLR, 2023.
 ```
