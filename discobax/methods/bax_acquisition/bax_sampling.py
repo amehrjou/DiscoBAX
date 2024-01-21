@@ -70,7 +70,7 @@ class BaxAcquisition(BaseBatchAcquisitionFunction):
         outputs = []
         # We obtain several MC samples to estimate the second term in Equation 1
         for j in range(self.num_samples_EIG):
-            model.load_folder(temp_folder_name)
+            model = model.load_folder(temp_folder_name)
             # Sample (f_ip)_j values
             f = (
                 model.get_model_prediction(dataset_x, return_multiple_preds=False)[0]
@@ -130,7 +130,7 @@ class BaxAcquisition(BaseBatchAcquisitionFunction):
         hxs = np.array(hxs)
         hxs = hxs.reshape(self.num_samples_EIG, len(available_indices))
         eigs = []
-        model.load_folder(temp_folder_name)
+        model = model.load_folder(temp_folder_name)
         hx = entropy(
             dataset_x_avail,
             model,

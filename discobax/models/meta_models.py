@@ -58,6 +58,8 @@ class SklearnRandomForestRegressor(AbstractMetaModel, SklearnModel):
         return y_samples
 
     def get_model_prediction(self, data, return_std_and_margin):
+        if isinstance(model.model, TorchModel): 
+            self.model.model.eval()
         if return_std_and_margin:
             y_samples = self.get_samples(data, self.num_target_samples)
             if y_samples.ndim == 3 and y_samples.ndimsy_samples.shape[-1] > 1:
