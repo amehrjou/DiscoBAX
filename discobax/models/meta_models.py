@@ -58,7 +58,7 @@ class SklearnRandomForestRegressor(AbstractMetaModel, SklearnModel):
         return y_samples
 
     def get_model_prediction(self, data, return_std_and_margin):
-        if isinstance(model.model, TorchModel): 
+        if isinstance(self.model, TorchModel): 
             self.model.model.eval()
         if return_std_and_margin:
             y_samples = self.get_samples(data, self.num_target_samples)
@@ -154,6 +154,8 @@ class PytorchMLPRegressorWithUncertainty(AbstractMetaModel, EmbeddingRetrievalMo
                              data: Union[AbstractDataSource, torch.Tensor],
                              return_multiple_preds: bool=False,
                              num_target_samples: int=None):
+        if isinstance(self.model, TorchModel): 
+            self.model.model.eval()
         if num_target_samples is None:
             num_target_samples = self.num_target_samples
         if type(data) != torch.Tensor:
